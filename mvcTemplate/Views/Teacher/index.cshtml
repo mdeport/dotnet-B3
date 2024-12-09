@@ -1,0 +1,30 @@
+@model IEnumerable<mvc.Models.Teacher>
+
+<h1>Teacher</h1>
+<p>Voici la liste des profs</p>
+<a href="@Url.Action("Add", "Teacher")" style="text-decoration: none; color: white; background-color: #2196F3; padding: 10px 15px; border-radius: 5px; font-size: 14px; transition: 0.3s;">Ajouter un prof</a>
+<div class="">
+    @foreach (var teacher in Model)
+    {
+        <div class="card" style="width: 18rem; margin: 10px;">
+            <div class="card-body">
+                <h5 class="card-title">@teacher.Lastname @teacher.Firstname, @teacher.Age ans</h5>
+                <p class="card-text">@teacher.Matter,@teacher.Langage</p>
+                <div style="display: flex; gap: 10px;">
+                    <a href="@Url.Action("Show", "Teacher", new { id = teacher.Id })" 
+                       style="text-decoration: none; color: white; background-color: #4CAF50; padding: 10px 15px; border-radius: 5px; font-size: 14px; transition: 0.3s;">
+                        Détail
+                    </a>
+                    <a href="@Url.Action("Delete", "Teacher", new { id = teacher.Id })" 
+                       style="text-decoration: none; color: white; background-color: #f44336; padding: 10px 15px; border-radius: 5px; font-size: 14px; transition: 0.3s;">
+                        Supprimer
+                    </a>
+                    <a href="@Url.Action("Update", "Teacher", new { id = teacher.Id })" 
+                       style="text-decoration: none; color: white; background-color: #2196F3; padding: 10px 15px; border-radius: 5px; font-size: 14px; transition: 0.3s;">
+                        Modifier
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
