@@ -19,3 +19,6 @@ champs : sont des variables qui sont declarer dans une classe.
 propriétés : sont des variables qui sont declarer dans une classe mais qui ont des methodes get et set.
 
 Les méthodes des controllers sont des actions.
+
+
+Pour commenter le code dans la vue html @* *@

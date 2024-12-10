@@ -15,7 +15,7 @@
                        style="text-decoration: none; color: white; background-color: #4CAF50; padding: 10px 15px; border-radius: 5px; font-size: 14px; transition: 0.3s;">
                         Détail
                     </a>
-                    <a href="@Url.Action("Delete", "Teacher", new { id = teacher.Id })" 
+                    <a href="@Url.Action("Delete", "Teacher", new { id = teacher.Id })" onclick="delete_confirm()" 
                        style="text-decoration: none; color: white; background-color: #f44336; padding: 10px 15px; border-radius: 5px; font-size: 14px; transition: 0.3s;">
                         Supprimer
                     </a>
@@ -28,3 +28,16 @@
         </div>
     }
 </div>
+<script>
+    function delete_confirm()
+    {
+			if(confirm("Voulez vous vraiment supprimer cette facture ?"))
+			{
+				alert('Supression effectuer');
+			}
+			else
+			{
+                event.preventDefault();
+			}
+	}
+</script>

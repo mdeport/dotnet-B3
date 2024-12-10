@@ -1,7 +1,18 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using mvc.Data;
+using Pomelo.EntityFrameworkCore.MySql.Internal;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+var serverVersion = new MySqlServerVersion(new Version(11, 6, 2));
+builder.Services.AddDbContext<ApplicationDbContext>(
+    options => options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"), serverVersion, 
+    MySqlOptions => MySqlOptions.EnableRetryOnFailure())
+);
 
 var app = builder.Build();
 
