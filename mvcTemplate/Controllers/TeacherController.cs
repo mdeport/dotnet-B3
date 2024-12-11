@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using mvc.Data;
 using mvc.Models;
 
@@ -19,17 +20,17 @@ namespace mvc.Controllers
             return View(teachers);
         }
 
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string id)
         {
-            var teacher = _context.Teachers.FirstOrDefault(t => t.Id == id);
+            var teacher = _context.Teachers.Find(id);
             _context.Teachers.Remove(teacher);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        public ActionResult Show(int id)
+        public ActionResult Show(string id)
         {
-            var teacher = _context.Teachers.FirstOrDefault(t => t.Id == id);
+            var teacher = _context.Teachers.Find(id);
             return View(teacher);
         }
 
@@ -51,22 +52,24 @@ namespace mvc.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Update(int id)
+        public ActionResult Update(string id)
         {
-            var teacher = _context.Teachers.FirstOrDefault(t => t.Id == id);
+            var teacher = _context.Teachers.Find(id);
             return View(teacher);
         }
 
         [HttpPost]
-        public IActionResult Update(Teacher teacher)
+        public ActionResult Update(Teacher teacher)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Teachers.Update(teacher);
-                _context.SaveChanges();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(teacher);
+            Teacher teacherToUpdate = _context.Teachers.Find(teacher.Id);
+            teacherToUpdate.Firstname = teacher.Firstname;
+            teacherToUpdate.Lastname = teacher.Lastname;
+            teacherToUpdate.Age = teacher.Age;
+            teacherToUpdate.Matter = teacher.Matter;
+            teacherToUpdate.Langage = teacher.Langage;
+            _context.SaveChanges();
+            
+            return RedirectToAction("Index");
         }
     }
 }

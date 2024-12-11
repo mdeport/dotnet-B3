@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Mvc;
+
+@inject SignInManager<Teacher> SignInManager
+@inject UserManager<Teacher> UserManager
+    
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -9,7 +15,9 @@
     <link rel="stylesheet" href="~/mvc.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">mvc</a>
@@ -31,11 +39,15 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Teacher" asp-action="Index">Teacher</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+    }
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

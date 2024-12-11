@@ -1,10 +1,11 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 
 namespace mvc.Models;
 
-public class Teacher
+public class Teacher : IdentityUser
 {
-    public int Id { get; set; }
+    //public int Id { get; set; }
     
     [StringLength(20, MinimumLength = 5)]
     public string Firstname { get; set; }

@@ -18,6 +18,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/Views/Account/IndexAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9JbmRleEFjY291bnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

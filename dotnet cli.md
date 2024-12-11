@@ -11,3 +11,15 @@ dotnet build
 ```bash
 dotnet run
 ```
+
+### Créer une migration
+
+```bash
+dotnet ef migrations add NomMigration
+```
+
+### Appliquer une migration
+
+```bash
+dotnet ef database update
+```

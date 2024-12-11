@@ -103,3 +103,12 @@
 /Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/obj/Debug/net8.0/mvc.csproj.AssemblyReference.cache
 /Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/obj/Debug/net8.0/mvc.csproj.Up2Date
+/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.UI.dll
+/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/bin/Debug/net8.0/Microsoft.Extensions.FileProviders.Embedded.dll
+/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/bin/Debug/net8.0/Microsoft.Extensions.Identity.Core.dll
+/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/bin/Debug/net8.0/Microsoft.Extensions.Identity.Stores.dll
+/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
+/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/obj/Debug/net8.0/mvc.MvcApplicationPartsAssemblyInfo.cs
