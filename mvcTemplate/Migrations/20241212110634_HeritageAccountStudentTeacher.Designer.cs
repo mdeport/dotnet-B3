@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using mvc.Data;
 
@@ -11,9 +12,11 @@ using mvc.Data;
 namespace mvc.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241212110634_HeritageAccountStudentTeacher")]
+    partial class HeritageAccountStudentTeacher
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -273,12 +276,6 @@ namespace mvc.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("varchar(20)");
 
-                    b.Property<bool>("IsStudent")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<bool>("IsTeacher")
-                        .HasColumnType("tinyint(1)");
-
                     b.Property<string>("Lastname")
                         .IsRequired()
                         .HasMaxLength(20)
@@ -294,12 +291,18 @@ namespace mvc.Migrations
                     b.Property<bool>("FirstConnection")
                         .HasColumnType("tinyint(1)");
 
+                    b.Property<bool>("IsStudent")
+                        .HasColumnType("tinyint(1)");
+
                     b.ToTable("Students", (string)null);
                 });
 
             modelBuilder.Entity("mvc.Models.Teacher", b =>
                 {
                     b.HasBaseType("mvc.Models.Account");
+
+                    b.Property<bool>("IsTeacher")
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Langage")
                         .IsRequired()

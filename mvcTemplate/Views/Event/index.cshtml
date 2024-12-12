@@ -1,28 +1,25 @@
-@model IEnumerable<mvc.Models.Student>
+@model IEnumerable<mvc.Models.Event>
 
-<h1>Etudiant</h1>
-
-<p>Voici la liste des etudiants</p>
-
-<a href="@Url.Action("Add", "Student")" style="text-decoration: none; color: white; background-color: #2196F3; padding: 10px 15px; border-radius: 5px; font-size: 14px; transition: 0.3s;">Ajouter un etudiant</a>
-
+<h1>Evenement</h1>
+<p>Voici la liste des evenements</p>
+<a href="@Url.Action("Add", "Event")" style="text-decoration: none; color: white; background-color: #2196F3; padding: 10px 15px; border-radius: 5px; font-size: 14px; transition: 0.3s;">Ajouter un évenement</a>
 <div class="">
-    @foreach (var student in Model)
+    @foreach (var events in Model)
     {
         <div class="card" style="width: 18rem; margin: 10px;">
             <div class="card-body">
-                <h5 class="card-title">@student.Firstname @student.Lastname</h5>
-                <p class="card-text">@student.Email</p>
+                <h5 class="card-title">@events.Title (@events.EventDate)</h5>
+                <p class="card-text">@events.Description</p>
                 <div style="display: flex; gap: 10px;">
-                    <a href="@Url.Action("Show", "Student", new { id = student.Id })"
+                    <a href="@Url.Action("Show", "Event", new { id = events.Id })"
                        style="text-decoration: none; color: white; background-color: #4CAF50; padding: 10px 15px; border-radius: 5px; font-size: 14px; transition: 0.3s;">
                         Détail
                     </a>
-                    <a href="@Url.Action("Delete", "Student", new { id = student.Id })" onclick="delete_confirm()"
+                    <a href="@Url.Action("Delete", "Event", new { id = events.Id })" onclick="delete_confirm()"
                        style="text-decoration: none; color: white; background-color: #f44336; padding: 10px 15px; border-radius: 5px; font-size: 14px; transition: 0.3s;">
                         Supprimer
                     </a>
-                    <a href="@Url.Action("Update", "Student", new { id = student.Id })"
+                    <a href="@Url.Action("Update", "Event", new { id = events.Id })"
                        style="text-decoration: none; color: white; background-color: #2196F3; padding: 10px 15px; border-radius: 5px; font-size: 14px; transition: 0.3s;">
                         Modifier
                     </a>
@@ -30,3 +27,4 @@
             </div>
         </div>
     }
+

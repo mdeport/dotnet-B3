@@ -23,3 +23,4 @@ dotnet ef migrations add NomMigration
 ```bash
 dotnet ef database update
 ```
+

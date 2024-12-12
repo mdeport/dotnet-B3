@@ -35,6 +35,8 @@ public class AccountController : Controller
             Lastname = model.Lastname,
             Langage = "",
             Matter = "",
+            IsStudent = false,
+            IsTeacher = true
         };
 
         var result = await _userManager.CreateAsync(user, model.Password);
@@ -49,6 +51,8 @@ public class AccountController : Controller
         {
             ModelState.AddModelError(string.Empty, error.Description);
         }
+
+        ModelState.AddModelError(string.Empty, "Erreur lors de l'inscription");
 
         return View(model);
     }

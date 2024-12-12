@@ -1,9 +1,10 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
+
 using mvc.Data;
 using mvc.Models;
-using Pomelo.EntityFrameworkCore.MySql.Internal;
+using mvc.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,20 +17,19 @@ builder.Services.AddDbContext<ApplicationDbContext>(
     MySqlOptions => MySqlOptions.EnableRetryOnFailure())
 );
 
-builder.Services.AddIdentity<Teacher, IdentityRole>(
-    options =>
-    {
-        options.SignIn.RequireConfirmedAccount = false;
-        options.Password.RequireDigit = true;
-        options.Password.RequireLowercase = true;
-        options.Password.RequireNonAlphanumeric = true;
-        options.Password.RequireUppercase = true;
-        options.Password.RequiredLength = 8;
+builder.Services.AddDefaultIdentity<Account>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 
-        options.User.RequireUniqueEmail = true;
-    }
-).AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddIdentityCore<Teacher>()
+    .AddSignInManager<SignInManager<Teacher>>()
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 
+builder.Services.AddIdentityCore<Student>()
+    .AddSignInManager<SignInManager<Student>>()
+    .AddEntityFrameworkStores<ApplicationDbContext>();
+
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<UserService>();
 
 var app = builder.Build();
 

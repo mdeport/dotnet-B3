@@ -26,8 +26,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/Views/Account/LoginStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpblN0dWRlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/Views/Event/add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnQvYWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/Views/Event/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnQvaW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/Views/Event/show.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnQvc2hvdy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/Views/Event/update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnQvdXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/Views/Home/Index.cshtml]
@@ -46,8 +66,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/Views/Student/add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudC9hZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/Views/Student/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudC9pbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/Views/Student/show.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudC9zaG93LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/Views/Student/update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudC91cGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/mateodeport/Desktop/Cours-troisieme-annee/Dot-net/mvcTemplate/Views/Teacher/add.cshtml]

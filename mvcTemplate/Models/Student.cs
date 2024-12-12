@@ -1,9 +1,11 @@
+using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
+
 namespace mvc.Models;
 
-public class Student
+public class Student : Account
 {
-    public int Id { get; set; }
-    public string Firstname { get; set; }
-    public string Lastname { get; set; }
-    public int Age { get; set;}
+    public bool FirstConnection { get; set; } = true;
+
+
 }
