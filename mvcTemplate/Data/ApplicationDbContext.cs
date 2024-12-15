@@ -10,6 +10,7 @@ public class ApplicationDbContext : IdentityDbContext
     public DbSet<Student> Students { get; set; }
     public DbSet<Teacher> Teachers { get; set; }
     public DbSet<Event> Events { get; set; }
+    public DbSet<Inscription> Inscriptions { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
         {

@@ -1,8 +1,106 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model IEnumerable<mvc.Models.Event>
+@inject mvc.Services.UserService UserService
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            margin: 20px 0;
+            text-align: center;
+            color: #343a40;
+        }
+        .card {
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.03);
+        }
+        .card-body {
+            background-color: #ffffff;
+            padding: 20px;
+        }
+        .card-title {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .btn-register {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 30px;
+            transition: background-color 0.3s;
+        }
+        .btn-register:hover {
+            background-color: #0056b3;
+            color: #fff;
+        }
+
+        .btn-unregister {
+            background-color: #dc3545;
+            color: #fff;
+            border-radius: 30px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-unregister:hover {
+            background-color: #c82333;
+            color: #fff;
+        }
+
+        .event-date, .event-location {
+            font-weight: bold;
+        }
+</style>
+
+<div class="container py-5">
+        <h1>Bienvenue sur tous les évènements du campus</h1>
+
+        <form method="get" asp-action="Index" class="mb-3">
+            <div class="input-group">
+                <input type="text" name="searchString" class="form-control" placeholder="Rechercher par titre..." value="@ViewData["CurrentFilter"]" />
+                <button type="submit" class="btn btn-primary">Rechercher</button>
+            </div>
+        </form>
+
+        <div class="mb-3">
+            <a class="btn btn-secondary" href="@Url.Action("Index", new { sortOrder = "title" })">Trier par titre</a>
+            <a class="btn btn-secondary" href="@Url.Action("Index", new { sortOrder = "date" })">Trier par date</a>
+        </div>
+
+        @foreach (var events in Model)
+        {
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">@events.Title</h5>
+                            <p class="card-text">@events.Description</p>
+                            <p class="card-text event-date">📅 Date : @events.EventDate.ToString("dd/MM/yyyy")</p>
+                            <p class="card-text event-location">📍 Lieu : @events.Location</p>
+                            <p class="card-text">🤟 Nombre de participants max : <strong>@events.MaxParticipants</strong></p>
+                            <div>
+                            @if (!await UserService.IsTeacherAsync())
+                            {
+                                @if (await UserService.IsUserInscribedAsync(events.Id))
+                                {
+                                    <span class="text-success">Vous êtes inscrit à cet événement.</span>
+                                    <a class="btn btn-unregister mt-3" href="@Url.Action("Desinscription", "Home", new { eventId = events.Id })">Se désinscrire</a>
+                                }
+                                else
+                                {
+                                    <a class="btn btn-register mt-3" href="@Url.Action("Inscription", "Home", new { eventId = events.Id })">S'inscrire à l'évènement</a>
+                                }
+                            }
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
 </div>

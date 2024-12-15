@@ -1,15 +1,58 @@
+<style>
+    .btn-custom {
+        text-decoration: none;
+        color: white;
+        background-color: #2196F3;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .btn-custom:hover {
+        background-color: #1976D2;
+        transform: scale(1.05);
+    }
+
+    .btn-container {
+        margin-bottom: 15px;
+    }
+</style>
+
 <div class="text-center">
     <h1 class="display-4">Bienvenue</h1>
     <h3 class="display-4">Veuillez vous connecter ou vous inscrire</h3>
     <div class="d-flex justify-content-center flex-column">
-        <div class="mb-3">
-            <a href="@Url.Action("Login", "Account")" style="text-decoration: none; color: white; background-color: #2196F3; padding: 10px 15px; border-radius: 5px; font-size: 14px; transition: 0.3s;">Se connecter</a>
+        <div class="btn-container">
+            <button class="btn-custom" onclick="showTeacherOptions()">Je suis un Professeur</button>
+            <button class="btn-custom" onclick="showStudentOptions()">Je suis un Étudiant</button>
         </div>
-        <div class="mb-3">
-            <a href="@Url.Action("Register", "Account")" style="text-decoration: none; color: white; background-color: #2196F3; padding: 10px 15px; border-radius: 5px; font-size: 14px; transition: 0.3s;">S'inscrire</a>
+        <div id="teacher-options" style="display: none;">
+            <div class="btn-container">
+                <a href="@Url.Action("Login", "Account")" class="btn-custom">Se connecter</a>
+            </div>
+            <div class="btn-container">
+                <a href="@Url.Action("Register", "Account")" class="btn-custom">S'inscrire</a>
+            </div>
         </div>
-        <div class="mb-3">
-            <a href="@Url.Action("LoginStudent", "Account")" style="text-decoration: none; color: white; background-color: #2196F3; padding: 10px 15px; border-radius: 5px; font-size: 14px; transition: 0.3s;">Se connecter avec un compte étudiant</a>
+        <div id="student-options" style="display: none;">
+            <div class="btn-container">
+                <a href="@Url.Action("LoginStudent", "Account")" class="btn-custom">Se connecter avec un compte étudiant</a>
+            </div>
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        function showTeacherOptions() {
+            document.getElementById('teacher-options').style.display = 'block';
+            document.getElementById('student-options').style.display = 'none';
+        }
+
+        function showStudentOptions() {
+            document.getElementById('teacher-options').style.display = 'none';
+            document.getElementById('student-options').style.display = 'block';
+        }
+    </script>
+}

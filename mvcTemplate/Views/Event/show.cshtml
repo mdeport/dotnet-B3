@@ -1,7 +1,22 @@
 @model mvc.Models.Event
 
-<h1>@Model.Title</h1>
-<p>@Model.Description</p>
-<p>@Model.EventDate</p>
-<p>@Model.Location</p>
-<p>Nombre de personne max : @Model.MaxParticipants</p>
+<h2>@Model.Title</h2>
+<p>Description : @Model.Description</p>
+<p>Date : @Model.EventDate.ToString("dd/MM/yyyy")</p>
+<p>Lieu : @Model.Location</p>
+<p>Nombre de participants max : @Model.MaxParticipants</p>
+
+<h3>Étudiants inscrits</h3>
+@if (ViewBag.Students != null && ((List<mvc.Models.Student>)ViewBag.Students).Any())
+{
+    <ul>
+        @foreach (var student in (List<mvc.Models.Student>)ViewBag.Students)
+        {
+            <li>@student.Firstname @student.Lastname - @student.Email</li>
+        }
+    </ul>
+}
+else
+{
+    <p>Aucun étudiant inscrit à cet événement.</p>
+}

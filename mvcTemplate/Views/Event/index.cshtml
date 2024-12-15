@@ -1,5 +1,13 @@
 @model IEnumerable<mvc.Models.Event>
 
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Message"]
+    </div>
+}
+
 <h1>Evenement</h1>
 <p>Voici la liste des evenements</p>
 <a href="@Url.Action("Add", "Event")" style="text-decoration: none; color: white; background-color: #2196F3; padding: 10px 15px; border-radius: 5px; font-size: 14px; transition: 0.3s;">Ajouter un évenement</a>
